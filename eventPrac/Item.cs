@@ -81,6 +81,7 @@ public class Item : IEnumerable
         SelectedItem = newitem;
     }
     #endregion
+
     public IEnumerator<Item> GetEnumerator() => Items.GetEnumerator();
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 }
