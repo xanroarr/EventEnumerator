@@ -6,9 +6,11 @@ item.DisplayItem += DisplayMessage;
 
 
 item.Add(new Item("Item 1", 23.1m, "Desc 1"));
+
 item.Remove(1);
 
 item.Add(new Item("Item 1", 23.1m, "Desc 1"));
+
 item.Edit(2, new Item("Edited Item", 24.1m, "Desc for edited"));
 
 void DisplayMessage(ItemEventArgs e)
