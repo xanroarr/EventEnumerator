@@ -4,16 +4,20 @@ using System.Collections;
 
 public class Item : IEnumerable
 {
+ 
     public delegate void ShowItemHandler(ItemEventArgs e);
 
     public event ShowItemHandler DisplayItem;
-
+    #region props
     private static int NEXT_ID = 0;
     public int Id { get; }
     public string Name { get; }
     public decimal Price { get; }
     public string Description { get; }
+    List<Item> Items { get; set; } = new List<Item>();
+    #endregion
 
+    #region ctors
     public Item() { }
 
     public Item(string name, decimal price, string description)
@@ -23,8 +27,9 @@ public class Item : IEnumerable
         this.Price = price;
         this.Description = description;
     }
-    List<Item> Items { get; set; } = new List<Item>();
+    #endregion
 
+    #region methods
     public void Add(Item item)
     {
         Items.Add(item);
@@ -75,7 +80,7 @@ public class Item : IEnumerable
             $"\nОписание: {newitem.Description}"));
         SelectedItem = newitem;
     }
-
+    #endregion
     public IEnumerator<Item> GetEnumerator() => Items.GetEnumerator();
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 }
