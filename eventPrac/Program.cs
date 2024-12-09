@@ -16,13 +16,13 @@ void DisplayMessage(ItemEventArgs e)
     Console.WriteLine(e.Message);
     Console.ForegroundColor = ConsoleColor.Yellow;
 
-    bool Completed = true;
+    bool ItemFound = false;
     bool OperationDone = false;
 
     foreach (var i in item)
     {
-        Completed = true;
-        if (Completed == true && OperationDone == false)
+        ItemFound = true;
+        if (ItemFound == true && OperationDone == false)
         {
             Console.WriteLine("\nТекущий товар:");
             OperationDone = true;
