@@ -4,17 +4,20 @@ using System.Collections;
 
 public class Item : IEnumerable
 {
+    public delegate void ShowItemHandler(ItemEventArgs e);
+
+    public event ShowItemHandler DisplayItem;
+
     private static int NEXT_ID = 0;
     public int Id { get; }
     public string Name { get; }
     public decimal Price { get; }
     public string Description { get; }
 
-    public delegate void ShowItemHandler(ItemEventArgs e);
-    public event ShowItemHandler DisplayItem;
     public Item()
     {
     }
+
     public Item(string name, decimal price, string description)
     {
         this.Id = ++NEXT_ID;
