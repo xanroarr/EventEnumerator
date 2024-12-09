@@ -8,6 +8,7 @@ public class Item : IEnumerable
     public delegate void ShowItemHandler(ItemEventArgs e);
 
     public event ShowItemHandler DisplayItem;
+
     #region props
     private static int NEXT_ID = 0;
     public int Id { get; }
