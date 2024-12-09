@@ -10,7 +10,7 @@ public class Item : IEnumerable
     public event ShowItemHandler DisplayItem;
 
     #region props
-    private static int NEXT_ID = 0;
+    private static int __nextID = 0;
     public int Id { get; }
     public string Name { get; }
     public decimal Price { get; }
@@ -23,7 +23,7 @@ public class Item : IEnumerable
 
     public Item(string name, decimal price, string description)
     {
-        this.Id = ++NEXT_ID;
+        this.Id = ++__nextID;
         this.Name = name;
         this.Price = price;
         this.Description = description;
