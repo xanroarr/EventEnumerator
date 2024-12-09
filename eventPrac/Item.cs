@@ -14,9 +14,7 @@ public class Item : IEnumerable
     public decimal Price { get; }
     public string Description { get; }
 
-    public Item()
-    {
-    }
+    public Item() { }
 
     public Item(string name, decimal price, string description)
     {
@@ -37,6 +35,7 @@ public class Item : IEnumerable
             $"\nЦена:{item.Price}" +
             $"\nОписание: {item.Description}"));
     }
+
     public void Remove(int id)
     {
         var RemovingItem = Items.FirstOrDefault(x => x.Id == id);
@@ -53,6 +52,7 @@ public class Item : IEnumerable
             $"\nЦена: {RemovingItem.Price}" +
             $"\nОписание: {RemovingItem.Description}"));
     }
+
     public void Edit(int editedItemId, Item newitem)
     {
         var SelectedItem = Items.FirstOrDefault(x => x.Id == editedItemId);
