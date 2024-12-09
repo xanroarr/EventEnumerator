@@ -35,7 +35,7 @@ public class Item : IEnumerable
     {
         Items.Add(item);
 
-        DisplayItem?.Invoke(new ItemEventArgs(item, $"\nПоступил товар с параметрами: " +
+        DisplayItem?.Invoke(new ItemEventArgs($"\nПоступил товар с параметрами: " +
             $"\nИД: {item.Id} " +
             $"\nНаименование: {item.Name}" +
             $"\nЦена:{item.Price}" +
@@ -52,7 +52,7 @@ public class Item : IEnumerable
             return;
         }
         Items.Remove(RemovingItem);
-        DisplayItem?.Invoke(new ItemEventArgs(RemovingItem, $"\nУдален товар с параметрами: " +
+        DisplayItem?.Invoke(new ItemEventArgs($"\nУдален товар с параметрами: " +
             $"\nИД: {RemovingItem.Id}" +
             $"\nНаименование: {RemovingItem.Name}" +
             $"\nЦена: {RemovingItem.Price}" +
@@ -69,7 +69,7 @@ public class Item : IEnumerable
             return;
         }
 
-        DisplayItem?.Invoke(new ItemEventArgs(SelectedItem, $"\nИзменен товар с параметрами: " +
+        DisplayItem?.Invoke(new ItemEventArgs($"\nИзменен товар с параметрами: " +
             $"\nИД: {SelectedItem.Id}" +
             $"\nНаименование: {SelectedItem.Name}" +
             $"\nЦена: {SelectedItem.Price}" +
